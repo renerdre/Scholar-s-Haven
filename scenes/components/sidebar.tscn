@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2tfig85ilomb"]
+
+[ext_resource type="Script" uid="uid://cmva7xajmcjv0" path="res://scenes/components/sidebar.gd" id="1_657l5"]
+[ext_resource type="Texture2D" uid="uid://ckmc0yfk5aggs" path="res://assets/ui/background/components/sidebar.png" id="1_lspqx"]
+[ext_resource type="Texture2D" uid="uid://c2esqms80403j" path="res://assets/ui/button/homebutton.png" id="2_bh5rj"]
+[ext_resource type="Texture2D" uid="uid://dllvde8krdabc" path="res://assets/ui/button/profilebutton.png" id="3_657l5"]
+[ext_resource type="Texture2D" uid="uid://cc4kc5usnrnqt" path="res://assets/ui/button/shopbutton.png" id="4_34ibf"]
+[ext_resource type="Texture2D" uid="uid://q1bfs810jilj" path="res://assets/ui/button/newsbutton.png" id="5_g5l1y"]
+[ext_resource type="Texture2D" uid="uid://dt8ay61eshdjt" path="res://assets/ui/button/settingsbutton.png" id="6_s7rp6"]
+[ext_resource type="Texture2D" uid="uid://buxt22aj2ss2n" path="res://assets/ui/button/ExitButton.png" id="7_bh5rj"]
+
+[node name="Sidebar" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_657l5")
+
+[node name="SidebarBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1282.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lspqx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HomeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 176.445
+offset_right = 212.0
+offset_bottom = 216.44495
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("2_bh5rj")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ProfileButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 214.5
+offset_right = 212.0
+offset_bottom = 254.49994
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("3_657l5")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ShopButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 256.97
+offset_right = 212.0
+offset_bottom = 296.97
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("4_34ibf")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="NewsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 297.77
+offset_right = 212.0
+offset_bottom = 337.77
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("5_g5l1y")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 335.89
+offset_right = 212.0
+offset_bottom = 375.89
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("6_s7rp6")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 641.745
+offset_right = 212.0
+offset_bottom = 681.74493
+pivot_offset = Vector2(106, 20)
+texture_normal = ExtResource("7_bh5rj")
+ignore_texture_size = true
+stretch_mode = 3
