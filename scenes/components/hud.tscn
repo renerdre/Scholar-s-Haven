@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://dio5470w443wq"]
+
+[ext_resource type="Script" uid="uid://ck7b283xcnrdy" path="res://scenes/components/hud.gd" id="1_8ddvg"]
+[ext_resource type="StyleBox" uid="uid://bakb2w73yafxj" path="res://assets/ui/hud_panel.tres" id="1_y7dsf"]
+[ext_resource type="Texture2D" uid="uid://ccexdye1opxbo" path="res://assets/ui/button/ingame/Mute-Button.png" id="2_p8e8n"]
+[ext_resource type="Texture2D" uid="uid://baaidncuy38wt" path="res://assets/ui/button/ingame/Study-Button.png" id="3_8ddvg"]
+[ext_resource type="Texture2D" uid="uid://drw03k6sdnjx" path="res://assets/ui/button/ingame/Leave-button.png" id="4_cbfro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6igqj"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.14759848, 0.06072081, 0.04208827, 0.38431373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.65882355, 0.5647059, 0.3764706, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8ddvg")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlayerListPanel" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 105.0
+offset_bottom = 90.0
+theme_override_styles/panel = ExtResource("1_y7dsf")
+
+[node name="PlayerRows" type="VBoxContainer" parent="Root/PlayerListPanel"]
+layout_mode = 2
+
+[node name="RoomNamePanel" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 38.0
+offset_right = 1240.0
+offset_bottom = 78.0
+theme_override_styles/panel = ExtResource("1_y7dsf")
+
+[node name="RoomNameLabel" type="Label" parent="Root/RoomNamePanel"]
+layout_mode = 2
+text = "Late Night Studies"
+
+[node name="TimerPanel" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 23.0
+offset_right = 700.9997
+offset_bottom = 85.0
+theme_override_styles/panel = ExtResource("1_y7dsf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/TimerPanel"]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="Root/TimerPanel/VBoxContainer"]
+layout_mode = 2
+text = "25:00"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Root/TimerPanel/VBoxContainer"]
+layout_mode = 2
+text = "Idle"
+horizontal_alignment = 1
+
+[node name="ButtonBar" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 621.0
+offset_right = 758.0
+offset_bottom = 696.0
+theme_override_styles/panel = ExtResource("1_y7dsf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/ButtonBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MicButton" type="TextureButton" parent="Root/ButtonBar/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("2_p8e8n")
+
+[node name="StudyButton" type="TextureButton" parent="Root/ButtonBar/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_8ddvg")
+
+[node name="LeaveButton" type="TextureButton" parent="Root/ButtonBar/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_cbfro")
+
+[node name="ChatBox" type="PanelContainer" parent="Root"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 407.0
+offset_right = 233.0
+offset_bottom = 682.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6igqj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/ChatBox"]
+layout_mode = 2
+
+[node name="ChatLog" type="RichTextLabel" parent="Root/ChatBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 237.27)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChatInput" type="LineEdit" parent="Root/ChatBox/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Type"

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://smush3x7wpl6"]
+
+[ext_resource type="Script" uid="uid://bcw6bleutaldy" path="res://scenes/pages/player.gd" id="1_85jok"]
+[ext_resource type="Texture2D" uid="uid://x2b8femxubb8" path="res://assets/maps/Placeholder.png" id="1_oee1n"]
+[ext_resource type="Script" uid="uid://cqlyr1ivhi0k2" path="res://scenes/pages/ingame.gd" id="1_x1465"]
+[ext_resource type="Texture2D" uid="uid://cbydbq5lmfp1" path="res://assets/characters/placeholder/charfront-placeholder.png" id="4_x1465"]
+[ext_resource type="PackedScene" uid="uid://dio5470w443wq" path="res://scenes/components/hud.tscn" id="5_aixc7"]
+[ext_resource type="Script" uid="uid://chcmstx1n66p1" path="res://scenes/pages/name_tag.gd" id="5_ki2eb"]
+[ext_resource type="Script" uid="uid://c0jfvkjnioegw" path="res://scenes/pages/click_marker.gd" id="7_fq7a7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1465"]
+radius = 21.335022
+height = 73.52002
+
+[node name="InGame" type="Node2D"]
+script = ExtResource("1_x1465")
+
+[node name="Map" type="Sprite2D" parent="."]
+scale = Vector2(0.8458995, 0.7311609)
+texture = ExtResource("1_oee1n")
+centered = false
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(902.665, 443.24)
+script = ExtResource("1_85jok")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(0.33502293, -0.2399903)
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("4_x1465")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.33502197, -0.23999023)
+shape = SubResource("CapsuleShape2D_x1465")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0.33502197, -0.23999023)
+zoom = Vector2(2.805, 2.805)
+limit_left = 0
+limit_top = 0
+limit_right = 1279
+limit_bottom = 718
+
+[node name="NameTag" type="Label" parent="Player"]
+offset_left = -58.664978
+offset_top = -55.23999
+offset_right = 241.33502
+offset_bottom = -6.23999
+scale = Vector2(0.4, 0.4)
+theme_override_constants/paragraph_spacing = -10
+theme_override_constants/outline_size = 6
+text = "Name
+00:00:00"
+horizontal_alignment = 1
+script = ExtResource("5_ki2eb")
+
+[node name="HUD" parent="." instance=ExtResource("5_aixc7")]
+
+[node name="ClickMarker" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("7_fq7a7")

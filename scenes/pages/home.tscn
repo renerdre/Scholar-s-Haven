@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://doeeo5rvn7dpi"]
+[gd_scene load_steps=6 format=3 uid="uid://doeeo5rvn7dpi"]
+
+[ext_resource type="Texture2D" uid="uid://dh4t48dkhejlk" path="res://assets/ui/background/page-background.png" id="1_7gavv"]
+[ext_resource type="PackedScene" uid="uid://b2tfig85ilomb" path="res://scenes/components/sidebar.tscn" id="2_fetu5"]
+[ext_resource type="Texture2D" uid="uid://bwmktmfxqdg5y" path="res://assets/ui/background/components/header-placeholder.png" id="3_hn6pk"]
+[ext_resource type="PackedScene" uid="uid://bq6lvk2i1q707" path="res://scenes/components/public_room.tscn" id="4_wfd65"]
+[ext_resource type="Texture2D" uid="uid://dmmey7ar7y71m" path="res://assets/ui/background/components/divider-publicroom.png" id="5_4yxid"]
 
 [node name="HomePage" type="Control"]
 layout_mode = 3
@@ -7,3 +13,89 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7gavv")
+expand_mode = 2
+
+[node name="Sidebar" parent="." instance=ExtResource("2_fetu5")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_right = 1280.0
+offset_bottom = 73.0
+texture = ExtResource("3_hn6pk")
+expand_mode = 2
+
+[node name="PublicRoom" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = -285.135
+offset_top = 72.0
+offset_right = -285.135
+offset_bottom = 72.0
+
+[node name="PublicRoom2" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = -26.539978
+offset_top = 72.0
+offset_right = -26.539978
+offset_bottom = 72.0
+
+[node name="PublicRoom3" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = 233.935
+offset_top = 72.0
+offset_right = 233.935
+offset_bottom = 72.0
+
+[node name="PublicRoom4" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = 494.99
+offset_top = 72.0
+offset_right = 494.99
+offset_bottom = 72.0
+
+[node name="PublicRoom5" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = -285.135
+offset_top = 249.565
+offset_right = -285.135
+offset_bottom = 249.565
+
+[node name="PublicRoom6" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = -26.539978
+offset_top = 249.565
+offset_right = -26.539978
+offset_bottom = 249.565
+
+[node name="PublicRoom7" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = 233.935
+offset_top = 249.565
+offset_right = 233.935
+offset_bottom = 249.565
+
+[node name="PublicRoom8" parent="." instance=ExtResource("4_wfd65")]
+layout_mode = 1
+offset_left = 494.99
+offset_top = 249.565
+offset_right = 494.99
+offset_bottom = 249.565
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 252.0
+offset_right = 1258.97
+offset_bottom = 327.0
+texture = ExtResource("5_4yxid")
+expand_mode = 1

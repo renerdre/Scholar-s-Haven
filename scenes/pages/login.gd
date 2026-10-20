@@ -1,6 +1,5 @@
 extends Control
 
-# Akun placeholder untuk testing (nanti diganti backend)
 const DUMMY_ACCOUNTS := {
 	"scholar@campus.co.id": {"password": "scholar123", "username": "Scholar", "coins": 150},
 	"test@test.com": {"password": "test123", "username": "Tester", "coins": 500},
@@ -37,7 +36,6 @@ func _on_login_pressed() -> void:
 		_show_error("Email or password is wrong.")
 		return
 
-	# Login berhasil: simpan data ke autoload Game, lalu pindah halaman
 	var account: Dictionary = DUMMY_ACCOUNTS[email]
 	Game.email = email
 	Game.username = account["username"]
