@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2tfig85ilomb"]
+[gd_scene load_steps=10 format=3 uid="uid://b2tfig85ilomb"]
 
 [ext_resource type="Script" uid="uid://cmva7xajmcjv0" path="res://scenes/components/sidebar.gd" id="1_657l5"]
 [ext_resource type="Texture2D" uid="uid://ckmc0yfk5aggs" path="res://assets/ui/background/components/sidebar.png" id="1_lspqx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://q1bfs810jilj" path="res://assets/ui/button/newsbutton.png" id="5_g5l1y"]
 [ext_resource type="Texture2D" uid="uid://dt8ay61eshdjt" path="res://assets/ui/button/settingsbutton.png" id="6_s7rp6"]
 [ext_resource type="Texture2D" uid="uid://buxt22aj2ss2n" path="res://assets/ui/button/ExitButton.png" id="7_bh5rj"]
+[ext_resource type="Texture2D" uid="uid://dke6br3yqjy4t" path="res://assets/ui/button/room/Rectangle 6.png" id="9_34ibf"]
 
 [node name="Sidebar" type="Control"]
 layout_mode = 3
@@ -78,7 +79,7 @@ offset_left = 2.0
 offset_top = 335.89
 offset_right = 212.0
 offset_bottom = 375.89
-pivot_offset = Vector2(106, 20)
+pivot_offset = Vector2(103.73, 25.27)
 texture_normal = ExtResource("6_s7rp6")
 ignore_texture_size = true
 stretch_mode = 3
@@ -93,3 +94,15 @@ pivot_offset = Vector2(106, 20)
 texture_normal = ExtResource("7_bh5rj")
 ignore_texture_size = true
 stretch_mode = 3
+
+[node name="ActiveGlow" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.46
+offset_top = 177.065
+offset_right = 285.46
+offset_bottom = 226.065
+scale = Vector2(0.75, 0.75)
+mouse_filter = 2
+texture = ExtResource("9_34ibf")
+expand_mode = 1

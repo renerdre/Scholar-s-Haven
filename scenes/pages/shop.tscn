@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmbpdmngqxyp2"]
+[gd_scene load_steps=19 format=3 uid="uid://dmbpdmngqxyp2"]
 
+[ext_resource type="Script" uid="uid://dub6oaw6coolk" path="res://scenes/pages/shop.gd" id="1_1cfe3"]
 [ext_resource type="Texture2D" uid="uid://dh4t48dkhejlk" path="res://assets/ui/background/page-background.png" id="1_dnlux"]
 [ext_resource type="PackedScene" uid="uid://b2tfig85ilomb" path="res://scenes/components/sidebar.tscn" id="2_rnbb3"]
+[ext_resource type="Texture2D" uid="uid://dm0ve62wp4en3" path="res://assets/ui/button/room/Group 13 (2).png" id="3_5ween"]
+[ext_resource type="PackedScene" uid="uid://bfxbbvgv8x763" path="res://scenes/pages/coins_display.tscn" id="4_wfw1k"]
+[ext_resource type="Texture2D" uid="uid://dyk13qwoholuj" path="res://assets/ui/button/room/shop/Outfit Chest.png" id="5_wfw1k"]
+[ext_resource type="Texture2D" uid="uid://mnw7cmfjw6s8" path="res://assets/ui/button/room/shop/Group 63.png" id="6_kdnla"]
+[ext_resource type="Texture2D" uid="uid://twdf47ody0up" path="res://assets/ui/button/room/shop/Group 63 (1).png" id="7_5a8dg"]
+[ext_resource type="Texture2D" uid="uid://jts757xonnhf" path="res://assets/ui/button/room/shop/Button (4).png" id="7_7wthh"]
+[ext_resource type="Texture2D" uid="uid://354fi5jrp4pr" path="res://assets/ui/button/room/shop/Button (5).png" id="8_5a8dg"]
+[ext_resource type="Texture2D" uid="uid://bgliwhu6jjsyu" path="res://assets/ui/button/room/shop/Button (6).png" id="9_ohhnk"]
+[ext_resource type="Script" uid="uid://bgedggyes6wjf" path="res://scenes/pages/loot_popup.gd" id="11_6lo56"]
+[ext_resource type="Texture2D" uid="uid://bv6exdxjnrlvf" path="res://assets/ui/button/room/shop/Outfit Chest (1).png" id="13_dltit"]
+[ext_resource type="PackedScene" uid="uid://cmjjs3sdog2xx" path="res://scenes/pages/shop_item_card.tscn" id="13_l1glb"]
+[ext_resource type="Script" uid="uid://sv6tihohats7" path="res://scenes/pages/pull_animation.gd" id="15_4ouck"]
+[ext_resource type="Texture2D" uid="uid://dw2j2hpin87x4" path="res://assets/ui/button/room/shop/Outfit Chest (2).png" id="15_dltit"]
+[ext_resource type="Texture2D" uid="uid://bkmi5vlchjgtd" path="res://assets/ui/button/room/shop/Vector.png" id="16_yaori"]
+[ext_resource type="Texture2D" uid="uid://wp88vyjpgbe8" path="res://assets/ui/button/room/shop/Vector (1).png" id="17_w3hfs"]
 
 [node name="ShopPage" type="Control"]
 layout_mode = 3
@@ -10,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1cfe3")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,6 +42,7 @@ expand_mode = 2
 layout_mode = 1
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 525.0
 offset_top = 51.0
@@ -32,3 +50,228 @@ offset_right = 905.0
 offset_bottom = 223.0
 theme_override_font_sizes/font_size = 126
 text = "SHOP"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_right = 1280.0
+offset_bottom = 73.0
+texture = ExtResource("3_5ween")
+expand_mode = 2
+
+[node name="CoinsDisplay" parent="." instance=ExtResource("4_wfw1k")]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 0.0
+offset_right = 1256.0
+offset_bottom = 78.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 168.0
+offset_right = 1201.755
+offset_bottom = 542.0
+texture = ExtResource("5_wfw1k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ChestButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 215.0
+offset_right = 623.0
+offset_bottom = 439.0
+texture_normal = ExtResource("6_kdnla")
+texture_hover = ExtResource("7_5a8dg")
+
+[node name="ShopMessageLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = -183.0
+offset_right = 133.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(27, 15.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="PullButton1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 390.0
+offset_right = 861.835
+offset_bottom = 450.0
+texture_normal = ExtResource("7_7wthh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PullButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 891.44
+offset_top = 390.0
+offset_right = 1011.275
+offset_bottom = 450.0
+texture_normal = ExtResource("8_5a8dg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PullButton3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1041.93
+offset_top = 390.0
+offset_right = 1161.765
+offset_bottom = 450.0
+texture_normal = ExtResource("9_ohhnk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ChestLootPopup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("11_6lo56")
+card_scene = ExtResource("13_l1glb")
+scroll_gap = 39.52
+
+[node name="LootDim" type="ColorRect" parent="ChestLootPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="LootPanel" type="CenterContainer" parent="ChestLootPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LootPanel2" type="TextureRect" parent="ChestLootPopup/LootPanel"]
+custom_minimum_size = Vector2(808.56, 507.225)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("13_dltit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LootScroll" type="ScrollContainer" parent="ChestLootPopup/LootPanel/LootPanel2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.235
+offset_top = 181.24
+offset_right = -25.765076
+offset_bottom = 181.24
+grow_horizontal = 2
+vertical_scroll_mode = 0
+
+[node name="LootRow" type="HBoxContainer" parent="ChestLootPopup/LootPanel/LootPanel2/LootScroll"]
+layout_mode = 2
+
+[node name="PullAnimation" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_4ouck")
+card_scene = ExtResource("13_l1glb")
+
+[node name="Dim" type="ColorRect" parent="PullAnimation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="Stage" type="Control" parent="PullAnimation"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Backdrop" type="TextureRect" parent="PullAnimation/Stage"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 123.0
+offset_right = 1161.0327
+offset_bottom = 574.0
+texture = ExtResource("15_dltit")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ResultScroll" type="ScrollContainer" parent="PullAnimation/Stage"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.235
+offset_top = 181.24
+offset_right = -25.765076
+offset_bottom = 181.24
+grow_horizontal = 2
+vertical_scroll_mode = 0
+
+[node name="ResultRow" type="HBoxContainer" parent="PullAnimation/Stage/ResultScroll"]
+layout_mode = 2
+
+[node name="Chest" type="TextureRect" parent="PullAnimation/Stage"]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 391.0
+offset_right = 865.0
+offset_bottom = 555.0
+texture = ExtResource("16_yaori")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ChestOpen" type="TextureRect" parent="PullAnimation/Stage"]
+visible = false
+layout_mode = 0
+offset_left = 602.0
+offset_top = 328.0
+offset_right = 865.0
+offset_bottom = 555.0
+texture = ExtResource("17_w3hfs")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RarityGlow" type="ColorRect" parent="PullAnimation"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.050980393)
+
+[node name="Flash" type="ColorRect" parent="PullAnimation"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

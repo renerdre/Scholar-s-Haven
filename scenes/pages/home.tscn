@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://doeeo5rvn7dpi"]
+[gd_scene load_steps=27 format=3 uid="uid://doeeo5rvn7dpi"]
 
 [ext_resource type="Texture2D" uid="uid://dh4t48dkhejlk" path="res://assets/ui/background/page-background.png" id="1_7gavv"]
+[ext_resource type="Script" uid="uid://dr2nk3u260xx5" path="res://scenes/pages/home.gd" id="1_hwhuf"]
 [ext_resource type="PackedScene" uid="uid://b2tfig85ilomb" path="res://scenes/components/sidebar.tscn" id="2_fetu5"]
-[ext_resource type="Texture2D" uid="uid://bwmktmfxqdg5y" path="res://assets/ui/background/components/header-placeholder.png" id="3_hn6pk"]
+[ext_resource type="Texture2D" uid="uid://el8uhdw0taf6" path="res://assets/ui/button/room/Group 13.png" id="4_hwhuf"]
 [ext_resource type="PackedScene" uid="uid://bq6lvk2i1q707" path="res://scenes/components/public_room.tscn" id="4_wfd65"]
 [ext_resource type="Texture2D" uid="uid://dmmey7ar7y71m" path="res://assets/ui/background/components/divider-publicroom.png" id="5_4yxid"]
+[ext_resource type="Texture2D" uid="uid://cexqekosjvvlq" path="res://assets/ui/background/home/create-bg.png" id="6_cc3sv"]
+[ext_resource type="Texture2D" uid="uid://dogb84yq6s4rn" path="res://assets/ui/background/home/create-btn.png" id="7_ri4wu"]
+[ext_resource type="Texture2D" uid="uid://blsw8lgq4rkou" path="res://assets/ui/background/home/join-bg.png" id="8_5gyxv"]
+[ext_resource type="Texture2D" uid="uid://pu2cxumu3qni" path="res://assets/ui/background/home/join-btn.png" id="9_0pda5"]
+[ext_resource type="Texture2D" uid="uid://kp0bs2b5k2w2" path="res://assets/ui/button/createroompopup.png" id="12_n7dma"]
+[ext_resource type="Texture2D" uid="uid://b88lsvx46viwj" path="res://assets/ui/button/room/Frame 7.png" id="13_3q8e8"]
+[ext_resource type="Texture2D" uid="uid://dfabnj7gun015" path="res://assets/ui/button/room/Button (1).png" id="14_bn4tm"]
+[ext_resource type="Texture2D" uid="uid://v4uchut8n0xc" path="res://assets/ui/button/room/Create Button.png" id="15_xcpgh"]
+[ext_resource type="Texture2D" uid="uid://biuhqna1bpbf1" path="res://assets/ui/button/room/Button (2).png" id="16_r7wvb"]
+[ext_resource type="Texture2D" uid="uid://dhvuwvo3phg8q" path="res://assets/ui/button/room/Button.png" id="17_p0ceo"]
+[ext_resource type="Texture2D" uid="uid://blqjy7o3ohydh" path="res://assets/ui/button/room/Room Name.png" id="18_584tl"]
+[ext_resource type="Texture2D" uid="uid://b5wqxrxgwclda" path="res://assets/ui/button/room/Join Room (1).png" id="19_vkcu3"]
+[ext_resource type="PackedScene" uid="uid://bfxbbvgv8x763" path="res://scenes/pages/coins_display.tscn" id="20_hwhuf"]
+[ext_resource type="Texture2D" uid="uid://pgjryp3jfaso" path="res://assets/ui/button/room/usernamemandatory.png" id="20_n7dma"]
+[ext_resource type="Texture2D" uid="uid://dc43akenkqdf7" path="res://assets/ui/button/room/Join Button.png" id="20_yaw5q"]
+[ext_resource type="Texture2D" uid="uid://kdbgmrqvr8d1" path="res://assets/ui/button/room/save.png" id="21_3q8e8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vp8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxuub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbnf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4rfb"]
 
 [node name="HomePage" type="Control"]
 layout_mode = 3
@@ -13,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hwhuf")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,7 +58,7 @@ layout_mode = 0
 offset_left = 212.0
 offset_right = 1280.0
 offset_bottom = 73.0
-texture = ExtResource("3_hn6pk")
+texture = ExtResource("4_hwhuf")
 expand_mode = 2
 
 [node name="PublicRoom" parent="." instance=ExtResource("4_wfd65")]
@@ -91,6 +117,13 @@ offset_top = 249.565
 offset_right = 494.99
 offset_bottom = 249.565
 
+[node name="CoinsDisplay" parent="." instance=ExtResource("20_hwhuf")]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 0.0
+offset_right = 1256.0
+offset_bottom = 78.0
+
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 226.0
@@ -99,3 +132,379 @@ offset_right = 1258.97
 offset_bottom = 327.0
 texture = ExtResource("5_4yxid")
 expand_mode = 1
+
+[node name="CreateRoomBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 95.0
+offset_right = 698.865
+offset_bottom = 226.0
+texture = ExtResource("6_cc3sv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CreateRoomButton" type="TextureButton" parent="CreateRoomBox"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 63.0
+offset_right = 178.385
+offset_bottom = 107.0
+texture_normal = ExtResource("7_ri4wu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="JoinRoomBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 789.06
+offset_top = 95.0
+offset_right = 1219.9249
+offset_bottom = 226.0
+texture = ExtResource("8_5gyxv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="JoinRoomButton" type="TextureButton" parent="JoinRoomBox"]
+layout_mode = 0
+offset_left = 34.950012
+offset_top = 67.0
+offset_right = 180.31001
+offset_bottom = 107.0
+texture_normal = ExtResource("9_0pda5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CreatePopup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreateDim" type="ColorRect" parent="CreatePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="CreateCenter" type="CenterContainer" parent="CreatePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreatePanel" type="TextureRect" parent="CreatePopup/CreateCenter"]
+custom_minimum_size = Vector2(385.035, 162.32)
+layout_mode = 2
+texture = ExtResource("12_n7dma")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.5
+anchor_right = 0.503
+anchor_bottom = 0.5
+offset_left = -191.67262
+offset_top = -130.51752
+offset_right = 191.32738
+offset_bottom = 130.48248
+
+[node name="TextureRect" type="TextureRect" parent="CreatePopup/CreateCenter/CreatePanel/CenterContainer"]
+custom_minimum_size = Vector2(371.555, 228.07)
+layout_mode = 2
+texture = ExtResource("13_3q8e8")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RoomNameInput" type="LineEdit" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.38000003
+anchor_right = 0.125
+anchor_bottom = 0.38000003
+offset_left = -34.12938
+offset_top = -15.313324
+offset_right = 136.87062
+offset_bottom = 15.686676
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1vp8a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxuub")
+placeholder_text = "Room Name"
+
+[node name="DescriptionInput" type="LineEdit" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.591
+anchor_right = 0.128
+anchor_bottom = 0.591
+offset_left = -34.284485
+offset_top = -15.55571
+offset_right = 319.7155
+offset_bottom = 15.44429
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mbnf6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4rfb")
+placeholder_text = "Enter Description"
+
+[node name="MinusButton" type="TextureButton" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08800001
+anchor_top = 0.48700002
+anchor_right = 0.08800001
+anchor_bottom = 0.48700002
+offset_left = -17.883087
+offset_top = -19.51207
+offset_right = 9.455048
+offset_bottom = 8.545486
+scale = Vector2(1.39, 1.39)
+texture_normal = ExtResource("14_bn4tm")
+stretch_mode = 3
+
+[node name="CreateSubmitButton" type="TextureButton" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.841
+anchor_top = 0.69600004
+anchor_right = 0.841
+anchor_bottom = 0.70100003
+offset_left = -44.814484
+offset_top = -17.984406
+offset_right = 45.185516
+offset_bottom = 20.090424
+texture_normal = ExtResource("15_xcpgh")
+
+[node name="PrivacyButton" type="TextureButton" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.101
+anchor_top = 0.69900006
+anchor_right = 0.101
+anchor_bottom = 0.69900006
+offset_left = -19.888538
+offset_top = -20.139526
+offset_right = 20.111462
+offset_bottom = 19.860474
+texture_normal = ExtResource("16_r7wvb")
+
+[node name="PrivacyLabel" type="Label" parent="CreatePopup/CreateCenter/CreatePanel/PrivacyButton"]
+layout_mode = 0
+offset_right = 111.0
+offset_bottom = 39.0
+text = "Private"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CapacityLabel" type="Label" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49300003
+anchor_top = 0.49
+anchor_right = 0.49300003
+anchor_bottom = 0.49
+offset_left = -19.82228
+offset_top = -11.667175
+offset_right = 20.17772
+offset_bottom = 11.332825
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90800005
+anchor_top = 0.49100003
+anchor_right = 0.90800005
+anchor_bottom = 0.49100003
+offset_left = -18.611816
+offset_top = -19.052216
+offset_right = 18.388184
+offset_bottom = 18.947784
+texture_normal = ExtResource("17_p0ceo")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 0
+offset_left = 16.000002
+offset_top = 135.00002
+offset_right = 517.0
+offset_bottom = 175.00002
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("18_584tl")
+
+[node name="TextureRect2" type="TextureRect" parent="CreatePopup/CreateCenter/CreatePanel"]
+layout_mode = 0
+offset_left = 15.000002
+offset_top = 217.00002
+offset_right = 516.0
+offset_bottom = 257.0
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("18_584tl")
+
+[node name="JoinPopup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoinDim" type="ColorRect" parent="JoinPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="JoinCenter" type="CenterContainer" parent="JoinPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoinPanel" type="TextureRect" parent="JoinPopup/JoinCenter"]
+custom_minimum_size = Vector2(385.035, 162.32)
+layout_mode = 2
+texture = ExtResource("19_vkcu3")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="RoomCodeInput" type="LineEdit" parent="JoinPopup/JoinCenter/JoinPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.48400003
+anchor_right = 0.30800003
+anchor_bottom = 0.48400003
+offset_left = -85.590805
+offset_top = -15.356964
+offset_right = 85.409195
+offset_bottom = 15.643036
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1vp8a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxuub")
+placeholder_text = "Enter code room"
+
+[node name="JoinSubmitButton" type="TextureButton" parent="JoinPopup/JoinCenter/JoinPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.832
+anchor_top = 0.595
+anchor_right = 0.832
+anchor_bottom = 0.595
+offset_left = -32.34915
+offset_top = -20.095856
+offset_right = 32.65085
+offset_bottom = 19.904144
+texture_normal = ExtResource("20_yaw5q")
+
+[node name="TextureRect" type="TextureRect" parent="JoinPopup/JoinCenter/JoinPanel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 181.00002
+offset_right = 534.0
+offset_bottom = 221.00002
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("18_584tl")
+
+[node name="usernamemandatoryPopup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="usernamemandatoryDim" type="ColorRect" parent="usernamemandatoryPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="usernamemandatoryCenter" type="CenterContainer" parent="usernamemandatoryPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="usernamemandatoryPanel" type="TextureRect" parent="usernamemandatoryPopup/usernamemandatoryCenter"]
+custom_minimum_size = Vector2(385.035, 162.32)
+layout_mode = 2
+texture = ExtResource("20_n7dma")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="usernameInput" type="LineEdit" parent="usernamemandatoryPopup/usernamemandatoryCenter/usernamemandatoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.48400003
+anchor_right = 0.30800003
+anchor_bottom = 0.48400003
+offset_left = -85.590805
+offset_top = -15.356964
+offset_right = 85.409195
+offset_bottom = 15.643036
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1vp8a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxuub")
+placeholder_text = "Enter your username"
+
+[node name="saveusernameButton" type="TextureButton" parent="usernamemandatoryPopup/usernamemandatoryCenter/usernamemandatoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.832
+anchor_top = 0.595
+anchor_right = 0.832
+anchor_bottom = 0.595
+offset_left = -39.319153
+offset_top = -21.59085
+offset_right = 30.680847
+offset_bottom = 18.40915
+texture_normal = ExtResource("21_3q8e8")
+
+[node name="TextureRect" type="TextureRect" parent="usernamemandatoryPopup/usernamemandatoryCenter/usernamemandatoryPanel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 181.00002
+offset_right = 534.0
+offset_bottom = 221.00002
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("18_584tl")

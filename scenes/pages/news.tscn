@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brxpmijqcxsdo"]
+[gd_scene load_steps=4 format=3 uid="uid://brxpmijqcxsdo"]
 
 [ext_resource type="Texture2D" uid="uid://dh4t48dkhejlk" path="res://assets/ui/background/page-background.png" id="1_awaix"]
 [ext_resource type="PackedScene" uid="uid://b2tfig85ilomb" path="res://scenes/components/sidebar.tscn" id="2_4wlbo"]
+[ext_resource type="Texture2D" uid="uid://cmxm0wn30dr8p" path="res://assets/ui/background/placeholder/Group 53.png" id="3_4wlbo"]
 
 [node name="NewPage" type="Control"]
 layout_mode = 3
@@ -25,6 +26,7 @@ expand_mode = 2
 layout_mode = 1
 
 [node name="Label" type="Label" parent="Sidebar"]
+visible = false
 layout_mode = 0
 offset_left = 525.0
 offset_top = 51.0
@@ -32,3 +34,13 @@ offset_right = 905.0
 offset_bottom = 223.0
 theme_override_font_sizes/font_size = 126
 text = "NEWS"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = -1.0
+offset_right = 1312.0
+offset_bottom = 827.0
+texture = ExtResource("3_4wlbo")
+expand_mode = 1
+stretch_mode = 5

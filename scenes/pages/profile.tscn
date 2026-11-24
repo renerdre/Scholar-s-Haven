@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1to3wk8vctny"]
+[gd_scene load_steps=25 format=3 uid="uid://b1to3wk8vctny"]
 
+[ext_resource type="Script" uid="uid://d2u2a5g4p3i1m" path="res://scenes/pages/profile.gd" id="1_4fasq"]
 [ext_resource type="Texture2D" uid="uid://dh4t48dkhejlk" path="res://assets/ui/background/page-background.png" id="1_pnwa8"]
 [ext_resource type="PackedScene" uid="uid://b2tfig85ilomb" path="res://scenes/components/sidebar.tscn" id="2_vucwp"]
+[ext_resource type="Texture2D" uid="uid://calfyfkoxqr81" path="res://assets/ui/button/room/Group 13 (1).png" id="3_umw7q"]
+[ext_resource type="PackedScene" uid="uid://bfxbbvgv8x763" path="res://scenes/pages/coins_display.tscn" id="4_k4fqq"]
+[ext_resource type="Texture2D" uid="uid://cv11yqvk8ruoe" path="res://assets/ui/button/room/Profile Info.png" id="5_lskng"]
+[ext_resource type="Texture2D" uid="uid://bohqtibm4eaki" path="res://assets/ui/button/room/Avatar.png" id="6_r5f4k"]
+[ext_resource type="Texture2D" uid="uid://d00vwo0ts3cag" path="res://assets/ui/button/avatar/placeholder/avatar image.png" id="7_r5f4k"]
+[ext_resource type="Texture2D" uid="uid://gb2qxyu24tnx" path="res://assets/ui/button/room/Button (3).png" id="8_m8wq6"]
+[ext_resource type="Texture2D" uid="uid://q3mjd5v543la" path="res://assets/ui/button/room/Button Wrapper.png" id="9_30k07"]
+[ext_resource type="Script" uid="uid://ow1lhsy1jg35" path="res://scenes/pages/wardrobe_popup.gd" id="10_8utk8"]
+[ext_resource type="Texture2D" uid="uid://b3xuh3bmtqlvk" path="res://assets/ui/button/room/Wardrobe (2).png" id="10_dwaj5"]
+[ext_resource type="PackedScene" uid="uid://35syoii8pl0k" path="res://scenes/pages/item_card.tscn" id="11_0qw12"]
+[ext_resource type="Texture2D" uid="uid://dnr1583su1xn1" path="res://assets/ui/button/room/Done Button.png" id="11_5jj27"]
+[ext_resource type="Texture2D" uid="uid://dqgbhqux23hvk" path="res://assets/ui/button/room/Avatar (1).png" id="11_8utk8"]
+[ext_resource type="Texture2D" uid="uid://bf5vi0hsjo20e" path="res://assets/ui/button/room/wardrobebutton/Button 1 (1).png" id="15_1h7ok"]
+[ext_resource type="Script" uid="uid://bi3mmtbdohdgc" path="res://scenes/pages/avatar_preview.gd" id="16_2app0"]
+[ext_resource type="Texture2D" uid="uid://sa06c8gjsf1s" path="res://assets/ui/button/room/wardrobebutton/Button 2.png" id="16_n4gkm"]
+[ext_resource type="Texture2D" uid="uid://dkbropmh833ni" path="res://assets/ui/button/room/wardrobebutton/Button 4.png" id="17_4fasq"]
+[ext_resource type="Texture2D" uid="uid://sf125vka26f4" path="res://assets/ui/button/room/wardrobebutton/Button 5.png" id="18_635t0"]
+[ext_resource type="Texture2D" uid="uid://v6gt2f7v4yd1" path="res://assets/ui/button/room/wardrobebutton/Button 7.png" id="19_2app0"]
+[ext_resource type="Texture2D" uid="uid://cudiudajudcs5" path="res://assets/ui/button/room/wardrobebutton/Button 8.png" id="20_plefg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8wq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30k07"]
 
 [node name="ProfilePage" type="Control"]
 layout_mode = 3
@@ -10,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4fasq")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +49,16 @@ expand_mode = 2
 [node name="Sidebar" parent="." instance=ExtResource("2_vucwp")]
 layout_mode = 1
 
+[node name="TextureRect" type="TextureRect" parent="Sidebar"]
+layout_mode = 0
+offset_left = 212.0
+offset_right = 1280.0
+offset_bottom = 73.0
+texture = ExtResource("3_umw7q")
+expand_mode = 2
+
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 525.0
 offset_top = 51.0
@@ -32,3 +66,320 @@ offset_right = 905.0
 offset_bottom = 223.0
 theme_override_font_sizes/font_size = 126
 text = "PROFILE"
+
+[node name="CoinsDisplay" parent="." instance=ExtResource("4_k4fqq")]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 0.0
+offset_right = 1256.0
+offset_bottom = 78.0
+
+[node name="ProfileInfo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 310.015
+offset_top = 176.0
+offset_right = 759.0155
+offset_bottom = 736.0
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("5_lskng")
+stretch_mode = 3
+
+[node name="previewPanel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 791.5
+offset_top = 176.0
+offset_right = 1240.5017
+offset_bottom = 736.0
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("6_r5f4k")
+stretch_mode = 3
+
+[node name="ProfileAvatarPreview" type="Node2D" parent="previewPanel"]
+position = Vector2(219.39, 414.825)
+script = ExtResource("16_2app0")
+preview_scale = 8.55
+
+[node name="AvatarPreview" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 791.5
+offset_top = 176.0
+offset_right = 1240.5017
+offset_bottom = 736.0
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("7_r5f4k")
+stretch_mode = 3
+
+[node name="NameInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.333
+anchor_right = 0.32700002
+anchor_bottom = 0.333
+offset_left = -85.56003
+offset_top = -15.76001
+offset_right = 85.43997
+offset_bottom = 15.23999
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8wq6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30k07")
+placeholder_text = "Enter your name"
+
+[node name="UsernameInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.333
+anchor_right = 0.32700002
+anchor_bottom = 0.333
+offset_left = -85.56003
+offset_top = 56.549988
+offset_right = 85.43997
+offset_bottom = 87.55002
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8wq6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30k07")
+placeholder_text = "Enter your username"
+
+[node name="CountryInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.333
+anchor_right = 0.32700002
+anchor_bottom = 0.333
+offset_left = -85.56003
+offset_top = 129.73999
+offset_right = 85.43997
+offset_bottom = 160.74002
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8wq6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30k07")
+placeholder_text = "Indonesia"
+
+[node name="SchoolInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.333
+anchor_right = 0.32700002
+anchor_bottom = 0.333
+offset_left = -85.56003
+offset_top = 202.59998
+offset_right = 85.43997
+offset_bottom = 233.6
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8wq6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30k07")
+placeholder_text = "Your university"
+
+[node name="AboutInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.333
+anchor_right = 0.32700002
+anchor_bottom = 0.333
+offset_left = -85.56003
+offset_top = 294.49
+offset_right = 85.43997
+offset_bottom = 325.49005
+theme_override_colors/font_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.49411765, 0.4862745, 0.47058824, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8wq6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30k07")
+placeholder_text = "Night owl disaster"
+
+[node name="SaveProfileButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.84400004
+anchor_right = 0.381
+anchor_bottom = 0.84400004
+offset_left = -51.680023
+offset_top = -18.680054
+offset_right = 72.31998
+offset_bottom = 26.319946
+scale = Vector2(0.83, 0.83)
+texture_normal = ExtResource("8_m8wq6")
+
+[node name="CustomizeAvatarButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.84400004
+anchor_right = 0.381
+anchor_bottom = 0.84400004
+offset_left = 392.18497
+offset_top = -18.680054
+offset_right = 624.1852
+offset_bottom = 26.319946
+scale = Vector2(0.83, 0.83)
+texture_normal = ExtResource("9_30k07")
+
+[node name="WardrobePopup" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_8utk8")
+item_card_scene = ExtResource("11_0qw12")
+
+[node name="WardrobeDim" type="ColorRect" parent="WardrobePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="WardrobePanel" type="CenterContainer" parent="WardrobePopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WardrobePanel" type="TextureRect" parent="WardrobePopup/WardrobePanel"]
+custom_minimum_size = Vector2(671.21, 507.225)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("10_dwaj5")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="PreviewPanel" type="TextureRect" parent="WardrobePopup/WardrobePanel/WardrobePanel"]
+custom_minimum_size = Vector2(627.37, 424.77)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79
+anchor_top = 0.5
+anchor_right = 0.79
+anchor_bottom = 0.5
+offset_left = -177.25592
+offset_top = -198.60501
+offset_right = 450.11407
+offset_bottom = 507.05496
+scale = Vector2(0.55, 0.55)
+mouse_filter = 2
+texture = ExtResource("11_8utk8")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AvatarPreview" type="TextureRect" parent="WardrobePopup/WardrobePanel/WardrobePanel/PreviewPanel"]
+visible = false
+layout_mode = 0
+offset_left = 178.1818
+offset_top = 103.63636
+offset_right = 512.11304
+offset_bottom = 665.6198
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("7_r5f4k")
+expand_mode = 3
+
+[node name="CharacterPreview" type="Node2D" parent="WardrobePopup/WardrobePanel/WardrobePanel/PreviewPanel"]
+position = Vector2(311.78, 547.39)
+script = ExtResource("16_2app0")
+preview_scale = 10.04
+
+[node name="WardrobeSaveButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84700006
+anchor_top = 0.83400005
+anchor_right = 0.84700006
+anchor_bottom = 0.83400005
+offset_left = -71.51495
+offset_top = -20.789185
+offset_right = 71.48505
+offset_bottom = 20.641724
+texture_normal = ExtResource("11_5jj27")
+
+[node name="ItemScroll" type="ScrollContainer" parent="WardrobePopup/WardrobePanel/WardrobePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.291
+anchor_top = 0.5
+anchor_right = 0.291
+anchor_bottom = 0.5
+offset_left = -166.47713
+offset_top = -168.60501
+offset_right = 197.52287
+offset_bottom = 191.39499
+horizontal_scroll_mode = 0
+
+[node name="ItemGrid" type="GridContainer" parent="WardrobePopup/WardrobePanel/WardrobePanel/ItemScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 4
+
+[node name="TabRow" type="HBoxContainer" parent="WardrobePopup/WardrobePanel/WardrobePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287
+anchor_top = 0.22800002
+anchor_right = 0.287
+anchor_bottom = 0.23300001
+offset_left = -163.71729
+offset_top = -15.625885
+offset_right = 237.28273
+offset_bottom = 5.0180664
+scale = Vector2(0.92, 0.92)
+mouse_filter = 2
+
+[node name="allButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("15_1h7ok")
+
+[node name="hatButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("16_n4gkm")
+
+[node name="clothesButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("17_4fasq")
+
+[node name="pantsButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("18_635t0")
+
+[node name="accessoriesButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("19_2app0")
+
+[node name="genderButton" type="TextureButton" parent="WardrobePopup/WardrobePanel/WardrobePanel/TabRow"]
+layout_mode = 2
+texture_normal = ExtResource("20_plefg")
+
+[node name="ProfileMessageLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 150.625
+offset_right = 27.0
+offset_bottom = 181.625
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(27, 15.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 22

@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2lap53qvw42q"]
+
+[ext_resource type="Script" uid="uid://brk0p01ynhiww" path="res://title.gd" id="1_g56p4"]
+[ext_resource type="Shader" uid="uid://b2weamc30frev" path="res://assets/shader/smoke.gdshader" id="2_83i1k"]
+[ext_resource type="AudioStream" uid="uid://co3x8w8n1gc5u" path="res://assets/audio/homemusic.ogg" id="2_ljtuo"]
+[ext_resource type="Texture2D" uid="uid://dwoc4cavd53o6" path="res://assets/ui/logo/ScholarsHavenLogo.png" id="3_ljtuo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xpn8b"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_smgjv"]
+noise = SubResource("FastNoiseLite_xpn8b")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xukb"]
+shader = ExtResource("2_83i1k")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_smgjv")
+shader_parameter/fog_color = Color(1, 1, 1, 1)
+shader_parameter/opacity = 0.150000007125
+shader_parameter/speed1 = Vector2(0.02, 0.002)
+shader_parameter/speed2 = Vector2(-0.015, -0.001)
+shader_parameter/speed3 = Vector2(0.035, 0.003)
+shader_parameter/low_edge = 0.25
+shader_parameter/high_edge = 0.9
+shader_parameter/light_color = Color(1, 0.9475, 0.85, 1)
+shader_parameter/light_strength = 0.150000007125
+shader_parameter/top_bias = 0.8570000407075
+shader_parameter/fade_height = 0.82000003569012
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g56p4")
+title_music = ExtResource("2_ljtuo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.083355255, 0.050087854, 0.002672899, 1)
+
+[node name="SmokeBack" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1xukb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="LogoCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="LogoCenter"]
+layout_mode = 2
+texture = ExtResource("3_ljtuo")
+
+[node name="SmokeFront" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1xukb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PromptLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 489.485
+offset_top = 558.405
+offset_right = 790.485
+offset_bottom = 622.405
+pivot_offset = Vector2(0, 34)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "Click To Enter"
+
+[node name="FadeRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
